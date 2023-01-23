@@ -8,12 +8,14 @@
   },
   "scripts": {
     "customerbefore": "mocha $(find ./customer/before -name '*.test.js')",
-    "customerafter": "mocha $(find ./customer/after -name '*.test.js')"
+    "customerafter": "mocha $(find ./customer/after -name '*.test.js')",
+    "testtypes": "mocha $(find ./types -name '*.test.js')"
   },
   "author": "DN",
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.3.7",
+    "chai-match": "^1.1.1",
     "mocha": "^10.2.0"
   }
 }
