@@ -33,7 +33,7 @@ describe('Customer tests', () => {
     it('recognizes thing looks like a date', () => {
         thing = Date();
         // Match a string that starts with something like this: "Mon Jan 23 2023 14:45:40 GMT-0700"
-        expect(thing).to.match(/^[A-Z][a-z]{2}\s[A-Z][a-z]{2}\s\d{1,2}\s\d{4}\s\d{2}:\d{2}:\d{2}\sGMT-\d{4}/);
+        expect(thing).to.match(/^[A-Z][a-z]{2}\s[A-Z][a-z]{2}\s\d{1,2}\s\d{4}\s\d{2}:\d{2}:\d{2}\sGMT[+-]\d{4}/);
     });
     
     it('recognizes thing as an object with 2 properties', () => {
@@ -45,8 +45,8 @@ describe('Customer tests', () => {
     })
     
     it('recognizes thing looks like an array of numbers', () => {
-        thing = [ 1, 2, 3.68, -4, '5' ];
+        thing = [ 1, 2, 3.68, -4, 5 ];
         expect(Array.isArray(thing)).to.equal(true);
-        expect(thing).to.contain.all.numbers();
+        expect(thing).to.contain.all.numbers();          // also works:  expect(thing).numbers();
     })
 })
