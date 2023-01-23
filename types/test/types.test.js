@@ -9,7 +9,7 @@ chai.use(chaiMatch);
 chai.use(function (chai) {
     var Assertion = chai.Assertion;
   
-    Assertion.addMethod('containOnlyNumbers', function () {
+    Assertion.addMethod('numbers', function () {
         let obj = this._obj;
         obj.filter((entry) => {
             new Assertion(typeof entry).to.equal('number');
@@ -47,6 +47,6 @@ describe('Customer tests', () => {
     it('recognizes thing looks like an array of numbers', () => {
         thing = [ 1, 2, 3.68, -4, 5 ];
         expect(Array.isArray(thing)).to.equal(true);
-        expect(thing).to.containOnlyNumbers();
+        expect(thing).to.contain.numbers();
     })
 })
