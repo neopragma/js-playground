@@ -1,0 +1,19 @@
+{
+  "name": "js-playground",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "customerbefore": "mocha $(find ./customer/before -name '*.test.js')",
+    "customerafter": "mocha $(find ./customer/after -name '*.test.js')"
+  },
+  "author": "DN",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  }
+}
