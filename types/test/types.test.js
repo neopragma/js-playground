@@ -12,7 +12,7 @@ chai.use(function (chai) {
     Assertion.addMethod('numbers', function () {
         let obj = this._obj;
         obj.filter((entry) => {
-            new Assertion(typeof entry).to.equal('number');
+            new Assertion(typeof entry).to.equal('number', 'array must contain only numbers');
         });
     });
 });
@@ -45,8 +45,8 @@ describe('Customer tests', () => {
     })
     
     it('recognizes thing looks like an array of numbers', () => {
-        thing = [ 1, 2, 3.68, -4, 5 ];
+        thing = [ 1, 2, 3.68, -4, '5' ];
         expect(Array.isArray(thing)).to.equal(true);
-        expect(thing).to.contain.numbers();
+        expect(thing).to.contain.all.numbers();
     })
 })
