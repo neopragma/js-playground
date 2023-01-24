@@ -17,7 +17,7 @@ chai.use(function (chai) {
     });
 });
   
-describe('Customer tests', () => {
+describe('Types tests', () => {
     let thing;
 
     it('recognizes thing is a number', () => {
