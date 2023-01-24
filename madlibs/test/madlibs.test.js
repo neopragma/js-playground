@@ -2,7 +2,7 @@ import 'mocha';
 import { expect } from 'chai';
 expect();
 
-describe('Numbers', () => {
+describe('MadLibs', () => {
     describe('Operator precedence', () => {
         it('returns 11 for 3 + 4 * 2', () => {
             expect(3 + 4 * 2).to.equal(11);

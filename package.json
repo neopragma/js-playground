@@ -7,10 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "customerbefore": "mocha $(find ./customer/before -name '*.test.js')",
-    "customerafter": "mocha $(find ./customer/after -name '*.test.js')",
-    "testtypes": "mocha $(find ./types -name '*.test.js')",
-    "testnumbers": "mocha $(find ./numbers -name '*.test.js')"
+    "test": "mocha $(find ./$npm_config_dir -name '*.test.js')",
+    "testw": "mocha $(find ./%npm_config_dir% -name '*.test.js')",
+    "testhelp": "node ./testhelp.js"
   },
   "author": "DN",
   "license": "MIT",
