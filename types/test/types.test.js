@@ -47,6 +47,6 @@ describe('Customer tests', () => {
     it('recognizes thing looks like an array of numbers', () => {
         thing = [ 1, 2, 3.68, -4, 5 ];
         expect(Array.isArray(thing)).to.equal(true);
-        expect(thing).to.contain.all.numbers();          // also works:  expect(thing).numbers();
+        expect(thing).to.contain.all.numbers();   // also works: expect(thing).numbers();
     })
 })

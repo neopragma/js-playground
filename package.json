@@ -9,7 +9,8 @@
   "scripts": {
     "customerbefore": "mocha $(find ./customer/before -name '*.test.js')",
     "customerafter": "mocha $(find ./customer/after -name '*.test.js')",
-    "testtypes": "mocha $(find ./types -name '*.test.js')"
+    "testtypes": "mocha $(find ./types -name '*.test.js')",
+    "testnumbers": "mocha $(find ./numbers -name '*.test.js')"
   },
   "author": "DN",
   "license": "MIT",
