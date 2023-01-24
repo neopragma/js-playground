@@ -1,9 +1,22 @@
 import 'mocha';
 import { expect } from 'chai';
 expect();
+import { stringConcat } from '../src/strings.js';
 
 describe('Strings', () => {
-    it('does something with a string', () => {
-        expect(foo).to.equal('bar');
+    it('concatenates two strings using plus', () => {
+        let str1 = 'Brian';
+        let str2 = 'Poirier';
+        expect(str1 + str2).to.equal('BrianPoirier');
+    })
+    it('concatenates two strings using a string template', () => {
+        let str1 = 'Brian';
+        let str2 = 'Poirier';
+        expect(`${str1}${str2}`).to.equal('BrianPoirier');
+    })
+    it('concatenates two strings using the concat function', () => {
+        let str1 = 'Brian';
+        let str2 = 'Poirier';
+        expect(str1.concat(str2)).to.equal('BrianPoirier');
     })
 })
