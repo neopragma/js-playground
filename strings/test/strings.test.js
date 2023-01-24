@@ -19,4 +19,10 @@ describe('Strings', () => {
         let str2 = 'Poirier';
         expect(str1.concat(str2)).to.equal('BrianPoirier');
     })
+    it('Check if str2 is uppercase', () => {
+        let str1 = 'BRIAN';
+        let str2 = 'brian';
+        expect(str2.toUpperCase()).to.equal('BRIAN')
+    })
+
 })
