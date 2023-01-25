@@ -34,13 +34,31 @@ describe('Strings', () => {
             expect('  value with embedded spaces  '.trim()).to.equal('value with embedded spaces');
         })    
     })
-    describe('slice() function', () => {
-        it('slice() copies part of a string to a new string and leaves the original unchanged', () => {
-            let originalValue = 'The quick brown fox jumped over the lazy dog';
-            let fox = originalValue.slice(16,19);
-            expect(fox).to.equal('fox');
+    describe('slice() and substring() functions', () => {
+        let originalValue = 'The quick brown fox jumped over the lazy dog';
+        it('slice() copies part of a string to a new string', () => {
+            expect(originalValue.slice(16,19)).to.equal('fox');
+        }) 
+        it('slice() with negative start position operates from the end of the string', () => {
+            expect(originalValue.slice(-3)).to.equal('dog');
+        })
+        it('slice() does not change the original string', () => {
+            let newString = originalValue.slice(1,2);
             expect(originalValue).to.equal('The quick brown fox jumped over the lazy dog');
-        })    
+        })   
+        it('substring() copies part of a string to a new string', () => {
+            expect(originalValue.substring(16,19)).to.equal('fox');
+        }) 
+        it('substring() with negative start position operates from the beginning of the string', () => {
+            expect(originalValue.substring(-3)).not.to.equal('dog');
+        })
+        it('substring() does not change the original string', () => {
+            let newString = originalValue.substring(1,2);
+            expect(originalValue).to.equal('The quick brown fox jumped over the lazy dog');
+        })   
+        it('substring() swaps the arguments when the start offset is greater than the end offset', () => {
+            expect(originalValue.substring(6,2)).to.equal('e qu');
+        })
     })
     describe('search() function', () => {
         it('search() specifying a regex returns the offset of a substring within a string', () => {
