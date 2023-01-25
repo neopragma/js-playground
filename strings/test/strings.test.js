@@ -43,8 +43,11 @@ describe('Strings', () => {
         })    
     })
     describe('search() function', () => {
-        it('search() returns the offset of a substring within a string', () => {
+        it('search() specifying a regex returns the offset of a substring within a string', () => {
             expect('Now is the time'.search(/time/)).to.equal(11);
+        })
+        it('search() specifying a string returns the offset of a substring within a string', () => {
+            expect('Now is the time'.search('time')).to.equal(11);
         })
         it('search() with the "i" flag ignores case', () => {
             expect('Now is the time'.search(/now/i)).to.equal(0);
@@ -53,6 +56,20 @@ describe('Strings', () => {
             expect('Now is the time'.search(/place/)).to.equal(-1);
         })    
     })
-
+    describe('replace() function', () => {
+        let testValue = 'alpha beta delta GAMMA alpha beta delta gamma';
+        it('replace() specifying a regex replaces the first occurrence of the substring', () => {
+            expect(testValue.replace(/delta/, "epsilon")).to.equal('alpha beta epsilon GAMMA alpha beta delta gamma');
+        })
+        it('replace() specifying a regex with "g" replaces all occurrences of the substring', () => {
+            expect(testValue.replace(/delta/g, "epsilon")).to.equal('alpha beta epsilon GAMMA alpha beta epsilon gamma');
+        })
+        it('replace() specifying a regex with "g" and "i" ignores case', () => {
+            expect(testValue.replace(/gamma/gi, "epsilon")).to.equal('alpha beta delta epsilon alpha beta delta epsilon');
+        })
+        it('replace() specifying a string replaces the first occurrence of the value', () => {
+            expect(testValue.replace("delta", "epsilon")).to.equal('alpha beta epsilon GAMMA alpha beta delta gamma');
+        })
+    })
 
 })
