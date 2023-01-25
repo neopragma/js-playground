@@ -39,7 +39,7 @@ describe('Strings', () => {
         it('slice() copies part of a string to a new string', () => {
             expect(originalValue.slice(16,19)).to.equal('fox');
         }) 
-        it('slice() with negative start position operates from the end of the string', () => {
+        it('slice() with negative start position counts backward from the end of the string', () => {
             expect(originalValue.slice(-3)).to.equal('dog');
         })
         it('slice() does not change the original string', () => {
