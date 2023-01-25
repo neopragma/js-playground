@@ -71,5 +71,29 @@ describe('Strings', () => {
             expect(testValue.replace("delta", "epsilon")).to.equal('alpha beta epsilon GAMMA alpha beta delta gamma');
         })
     })
+    describe('repeat() function', () => {
+        it('repeat() repeats a single character', () => {
+            expect('X'.repeat(6)).to.equal('XXXXXX');
+        })
+        it('repeat() repeats a string', () => {
+            expect("Don't make me repeat" + " myself".repeat(3) + "!")
+                .to.equal("Don't make me repeat myself myself myself!");
+        })
+        it('repeat() helps make a comments flowerbox for C and similar languages', () => {
+            let asterisk = '*';
+            let space = ' ';
+            let lineWithAsterisks = `/${asterisk.repeat(78)}/\n`
+            let lineWithSpaces = `/${asterisk}${space.repeat(76)}${asterisk}/\n`;
+    
+            expect(`${lineWithAsterisks}${lineWithSpaces.repeat(4)}${lineWithAsterisks}`)
+            .to.equal("/******************************************************************************/\n"
+                    + "/*                                                                            */\n"
+                    + "/*                                                                            */\n"
+                    + "/*                                                                            */\n"
+                    + "/*                                                                            */\n"
+                    + "/******************************************************************************/\n"
+            );
+        })
+    })
 
 })
