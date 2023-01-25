@@ -29,9 +29,15 @@ describe('Strings', () => {
             expect('BRIAN'.toLowerCase()).to.equal('brian');
         })    
     })
-    describe('trim() function', () => {
+    describe('trim(), trimStart(), and trimEnd() functions', () => {
         it('trim() removes whitespace from the beginning and end of a string', () => {
             expect('  value with embedded spaces  '.trim()).to.equal('value with embedded spaces');
+        })    
+        it('trimStart() removes whitespace from the beginning of a string', () => {
+            expect('  value with embedded spaces  '.trimStart()).to.equal('value with embedded spaces  ');
+        })    
+        it('trimEnd() removes whitespace from the end of a string', () => {
+            expect('  value with embedded spaces  '.trimEnd()).to.equal('  value with embedded spaces');
         })    
     })
     describe('slice() and substring() functions', () => {
