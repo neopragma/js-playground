@@ -19,10 +19,14 @@ describe('Strings', () => {
         let str2 = 'Poirier';
         expect(str1.concat(str2)).to.equal('BrianPoirier');
     })
-    it('Check if str2 is uppercase', () => {
-        let str1 = 'BRIAN';
-        let str2 = 'brian';
-        expect(str2.toUpperCase()).to.equal('BRIAN')
+    it('toUpperCase() converts a string to upper case', () => {
+        expect('brian'.toUpperCase()).to.equal('BRIAN');
+    })
+    it('toLowerCase() converts a string to lower case', () => {
+        expect('BRIAN'.toLowerCase()).to.equal('brian');
+    })
+    it('trim() removes whitespace from the beginning and end of a string', () => {
+        expect('  value with embedded spaces  '.trim()).to.equal('value with embedded spaces');
     })
 
 })
