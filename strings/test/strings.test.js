@@ -66,7 +66,7 @@ describe('Strings', () => {
             expect(originalValue.substring(6,2)).to.equal('e qu');
         })
     })
-    describe('search() function', () => {
+    describe('search() and indexOf() functions', () => {
         it('search() specifying a regex returns the offset of a substring within a string', () => {
             expect('Now is the time'.search(/time/)).to.equal(11);
         })
@@ -79,6 +79,12 @@ describe('Strings', () => {
         it('search() returns -1 when the substring is not found', () => {
             expect('Now is the time'.search(/place/)).to.equal(-1);
         })    
+        it('indexOf() does not work with a regex', () => {
+            expect('Now is the time'.indexOf(/time/)).to.equal(-1);
+        })
+        it('indexOf() specifying a string returns the offset of a substring within a string', () => {
+            expect('Now is the time'.indexOf("time")).to.equal(11);
+        })
     })
     describe('replace() function', () => {
         let testValue = 'alpha beta delta GAMMA alpha beta delta gamma';
@@ -118,6 +124,22 @@ describe('Strings', () => {
                     + "/******************************************************************************/\n"
             );
         })
+    })
+    describe('Different ways to extract the value following the last slash (/) in a string', () => {
+        let pathName = '/var/opt/apache/bin';
+        it('using search() and slice()', () => {
+            expect(pathName.slice(pathName.search(/[^/]+$/g))).to.equal('bin');
+        })
+        it('using lastIndexOf() and slice()', () => {
+            expect(pathName.slice(pathName.lastIndexOf('/')+1)).to.equal('bin');
+        })
+        it('using search() and substring()', () => {
+            expect(pathName.substring(pathName.search(/[^/]+$/g))).to.equal('bin');
+        })
+        it('using lastIndexOf() and substring()', () => {
+            expect(pathName.substring(pathName.lastIndexOf('/')+1)).to.equal('bin');
+        })
+
     })
 
 })
