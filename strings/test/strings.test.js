@@ -1,7 +1,6 @@
 import 'mocha';
 import { expect } from 'chai';
 expect();
-import { stringConcat } from '../src/strings.js';
 
 describe('Strings', () => {
     describe('concatentation', () => {
